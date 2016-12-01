@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
-/*
-  Generated class for the AuthData provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class AuthData {
-
-  constructor(public http: Http) {
-    console.log('Hello AuthData Provider');
+  fireAuth: any;
+  constructor(public af: AngularFire) {
+    af.auth.subscribe( user => {
+      if (user) {
+        this.fireAuth = user.auth;
+        console.log(user);
+      }
+    });
   }
-
 }
