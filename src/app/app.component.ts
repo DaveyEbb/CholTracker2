@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage } from '../pages/home/home';
+//import { HomePage } from '../pages/home/home';
 import { LandingPage } from '../pages/landing/landing';
 
 import { AngularFire } from 'angularfire2';
@@ -17,7 +17,9 @@ export class MyApp {
   constructor(platform: Platform, public af: AngularFire) {
     af.auth.subscribe( user => {
       if (user) {
-        this.rootPage = HomePage;
+        console.log("User: " + user);
+        // this.rootPage = HomePage;
+        this.rootPage = LandingPage;
       } else {
         this.rootPage = LandingPage;
       }

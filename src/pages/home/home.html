@@ -1,11 +1,28 @@
+alert icon.
+Go ahead and edit the header:
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-navbar color="primary">
+<ion-title>
+My Bills
+</ion-title>
+<ion-buttons end>
+<button ion-button icon-only (click)="createBill()">
+<ion-icon name="add"></ion-icon>
+</button>
+</ion-buttons>
+</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  Home Page
-</ion-content>
+<ion-list>
+  <ion-list-header>
+    UnPaid Bills
+  </ion-list-header>
+  <ion-item *ngFor="let bill of billList | async"
+    (click)="moreBillOptions(bill.$key)"
+    [class.hide]="bill.paid == true">
+    <ion-icon name="timer" color="danger" item-left></ion-icon>
+    <h2>{{bill.name}}</h2>
+    <h3>Total: <strong>${{bill.amount}}</strong></h3>
+    <p>Pay before: <strong>{{bill.dueDate}}</strong></p>
+  </ion-item>
+</ion-list>
