@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController,
          ActionSheetController,
-         Platform  
-       } from 'ionic-angular';
-import { BillData } from '../../providers/bill-data';
-import { CreateBillPage } from '../create-bill/create-bill';
-import { BillDetailPage } from '../bill-detail/bill-detail';
+         Platform } from 'ionic-angular';
+import { BloodtestData } from '../../providers/bloodtest-data';
+import { BloodtestCreatePage } from '../bloodtest-create/bloodtest-create';
+import { BloodtestDetailPage } from '../bloodtest-detail/bloodtest-detail';
 
 @Component({
   selector: 'page-home',
@@ -13,26 +12,26 @@ import { BillDetailPage } from '../bill-detail/bill-detail';
 })
 export class HomePage {
 
-  public billList: any;
+  public bloodtestList: any;
 
-  constructor(public navCtrl: NavController, public billData: BillData,
+  constructor(public navCtrl: NavController, public bloodtestData: BloodtestData,
     public actionCtrl: ActionSheetController, public platform: Platform) {
-    this.billList = this.billData.getBillList();
+    this.bloodtestList = this.bloodtestData.getBloodtestList();
   }
 
-  createBill(){
-    this.navCtrl.push(CreateBillPage);
+  createBloodtest(){
+    this.navCtrl.push(BloodtestCreatePage);
   }
 
-  goToPaidBill(billId){
-    this.navCtrl.push(BillDetailPage, {
-    billId: billId
+  goToBloodtestDetail(bloodtestId){
+    this.navCtrl.push(BloodtestDetailPage, {
+    billId: bloodtestId
     });
   }
 
-  moreBillOptions(billId){
+  moreBloodtestOptions(bloodtestId){
     let action = this.actionCtrl.create({
-      title: 'Modify your bill',
+      title: 'Modify bloodtest results',
       buttons: [
     // We'll add the buttons here
         {
@@ -40,23 +39,16 @@ export class HomePage {
           role: 'destructive',
           icon: !this.platform.is('ios') ? 'trash' : null,
           handler: () => {
-            this.billData.removeBill(billId);
+            this.bloodtestData.removeBloodtest(bloodtestId);
           }
         },
         {
           text: 'More details',
           icon: !this.platform.is('ios') ? 'play' : null,
           handler: () => {
-            this.navCtrl.push(BillDetailPage, {
-            billId: billId
+            this.navCtrl.push(BloodtestDetailPage, {
+            billId: bloodtestId
               });
-          }
-        },
-        {
-          text: 'Mark as Paid!',
-          icon: !this.platform.is('ios') ? 'checkmark' : null,
-          handler: () => {
-            this.billData.payBill(billId);
           }
         },
         {

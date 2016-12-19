@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Blood Test</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Test Description></ion-label>
+    <ion-input [(ngModel)]="bloodtestDesc" type="text" placeholder="Description"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>HDL</ion-label>
+    <ion-input [(ngModel)]="hdl" type="number" placeholder="(mmol/l)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>LDL</ion-label>
+    <ion-input [(ngModel)]="ldl" type="number" placeholder="LDL (mmol/l)"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label stacked>Triglycerides</ion-label>
+    <ion-input [(ngModel)]="trigl" type="number" placeholder="(mmol/l)"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label stacked>Total Cholesterol</ion-label>
+    <ion-input [(ngModel)]="totchol" type="number" placeholder="(mmol/l)"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Test Date</ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="testDate"></ion-datetime>
+  </ion-item>
+
+  <button ion-button block (click)="createBloodtest(bloodtestDesc, ldl, hdl, trigl, totchol, testDate)">
+    Create blood test
+  </button>
+</ion-content>

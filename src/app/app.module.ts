@@ -9,7 +9,12 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
+import { BloodtestCreatePage } from '../pages/bloodtest-create/bloodtest-create';
+import { BloodtestDetailPage } from '../pages/bloodtest-detail/bloodtest-detail';
+import { BloodtestListPage } from '../pages/bloodtest-list/bloodtest-list';
+import { ChartsPage } from '../pages/charts/charts';
 // Importing providers
+import { BloodtestData } from '../providers/bloodtest-data';
 import { AuthData } from '../providers/auth-data';
 import { BillData } from '../providers/bill-data';
 // Import the AF2 Module
@@ -38,7 +43,11 @@ const myFirebaseAuthConfig = {
     HomePage,
     LoginPage,
     ResetPasswordPage,
-    SignupPage
+    SignupPage,
+    BloodtestCreatePage,
+    BloodtestDetailPage,
+    BloodtestListPage,
+    ChartsPage
   ],
 imports: [
     IonicModule.forRoot(MyApp),
@@ -53,12 +62,17 @@ entryComponents: [
     HomePage,
     LoginPage,
     ResetPasswordPage,
-    SignupPage
+    SignupPage,
+    BloodtestCreatePage,
+    BloodtestDetailPage,
+    BloodtestListPage,
+    ChartsPage
 ],
 providers: [
   [{provide: ErrorHandler, useClass: IonicErrorHandler}],
   AuthData,
-  BillData
+  BillData,
+  BloodtestData
   ]
 })
 export class AppModule {}
