@@ -1,18 +1,25 @@
-<!--
-  Generated template for the BloodtestDetail page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>BloodtestDetail</ion-title>
+    <ion-title>Blood Test Detail</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  
+  <h2>
+    {{currentBloodtest.bloodtestDesc}}
+  </h2>
+
+  <p>Date: {{currentBloodtest.testDate}}</p>
+
+  <p>HDL: {{currentBloodtest.hdl}}</p>
+
+  <p>LDL: {{currentBloodtest.ldl}}</p>
+
+  <p>Triglycerides: {{currentBloodtest.trigl}}</p>
+
+  <p>Total Cholesterol: {{currentBloodtest.totchol}}</p>
 
 </ion-content>
