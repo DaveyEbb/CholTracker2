@@ -25,7 +25,7 @@ export class HomePage {
 
   goToBloodtestDetail(bloodtestId){
     this.navCtrl.push(BloodtestDetailPage, {
-    billId: bloodtestId
+    bloodtestId: bloodtestId
     });
   }
 
@@ -47,7 +47,7 @@ export class HomePage {
           icon: !this.platform.is('ios') ? 'play' : null,
           handler: () => {
             this.navCtrl.push(BloodtestDetailPage, {
-            billId: bloodtestId
+            bloodtestId: bloodtestId
               });
           }
         },

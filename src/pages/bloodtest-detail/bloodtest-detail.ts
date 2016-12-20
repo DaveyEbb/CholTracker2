@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,
+         NavParams,
+         ActionSheetController,
+         Platform,
+         AlertController } from 'ionic-angular';
 import { BloodtestData } from '../../providers/bloodtest-data';
 
 @Component({
@@ -8,16 +12,29 @@ import { BloodtestData } from '../../providers/bloodtest-data';
 })
 
 export class BloodtestDetailPage {
-  currentBloodtest: any;
+  // currentBloodtest: any;
+  public bloodtest: any;
+  
   constructor(public nav: NavController, public navParams: NavParams, 
-      public bloodtestData: BloodtestData) {
-    this.navParams = navParams;
+      public platform: Platform, public actionCtrl: ActionSheetController,
+      public bloodtestData: BloodtestData, public alertCtrl: AlertController) {
 
-    this.bloodtestData.getBloodtestDetail(this.navParams.get('bloodtestId'))
-      .on('value', (snapshot) => {
-        console.log(snapshot.val());
-        this.currentBloodtest = snapshot.val();
-        console.log("HDL: " + this.currentBloodtest.hdl);
-    });
+      this.bloodtestData.getBloodtestDetail(this.navParams.get("bloodtestId"))
+        .subscribe( bloodtestSnap => { this.bloodtest = bloodtestSnap });
+
+
+//  getBloodtestDetail(bloodtestId: string){
+//     return this.bloodtestDetail = this.af.database.object('/userProfile/' +
+//     this.userId + '/bloodtestList/' + bloodtestId);
+//   }
+
+    // this.navParams = navParams;
+
+    // this.bloodtestData.getBloodtestDetail(this.navParams.get('bloodtestId'))
+    //   .on('value', (snapshot) => {
+    //     console.log(snapshot.val());
+    //     this.currentBloodtest = snapshot.val();
+    //     console.log("HDL: " + this.currentBloodtest.hdl);
+    // });
   }
 }
