@@ -5,6 +5,7 @@ import { NavController,
 import { BloodtestData } from '../../providers/bloodtest-data';
 import { BloodtestCreatePage } from '../bloodtest-create/bloodtest-create';
 import { BloodtestDetailPage } from '../bloodtest-detail/bloodtest-detail';
+import { ChartsPage } from '../charts/charts';
 
 @Component({
   selector: 'page-home',
@@ -62,6 +63,10 @@ export class HomePage {
       ]
     });
     action.present();
+  }
+
+  showCharts() {
+    this.navCtrl.push(ChartsPage);
   }
   
 
