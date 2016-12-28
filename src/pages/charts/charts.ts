@@ -4,8 +4,7 @@ import * as ChartJs from 'chart.js'; // 导入chart.js
 import { BloodtestData } from '../../providers/bloodtest-data';
 
 import { AngularFire,
-         FirebaseListObservable,
-         FirebaseObjectObservable  
+         FirebaseListObservable  
        } from 'angularfire2';
 
 @Component({
@@ -16,12 +15,21 @@ export class ChartsPage {
 
     public bloodtestList: FirebaseListObservable<any>;
     userId: string;
+    public bloodtestArray = [];
+    
 
     constructor(public nav: NavController, public bloodtestData: BloodtestData,
                 public af: AngularFire) {
 
      
         this.nav = nav;
+
+   
+        // var hdlArray = [];
+        // var ldlArray = [];
+        // var triglArray = [];
+        // var totcholArray = [];
+        // var testDateArray = [];
         
         this.af.auth.subscribe(auth => {
           if (auth) {
@@ -36,11 +44,15 @@ export class ChartsPage {
             this.bloodtestList
          .subscribe(snapshots => {
             snapshots.forEach(snapshot => {
-              console.log(snapshot.key)
+              console.log(">> snapshot.key: " + snapshot.key)
+              console.log(">> snapshot.val(): ")
               console.log(snapshot.val())
+              this.bloodtestArray.push(snapshot.val())
            });
          })
-        console.log("** this.items: ");console.log(this.bloodtestList); 
+        console.log("** bloodtestArray: ");console.log(this.bloodtestArray); 
+        console.log("** length of array: ");console.log(this.bloodtestArray.length);
+
       }
 
     ionViewDidEnter() {
@@ -62,11 +74,7 @@ export class ChartsPage {
     //   bloodtestList = rawList;
         
       // Push HDL values into own array
-      var hdlArray = [];
-      var ldlArray = [];
-      var triglArray = [];
-      var totcholArray = [];
-      var testDateArray = [];
+      
       // for (var i=0; i<bloodtestList.length; i++) {
       //   hdlArray.push(Number(bloodtestList[i].hdl));
       //   ldlArray.push(Number(bloodtestList[i].ldl));
