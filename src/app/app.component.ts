@@ -4,7 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 //import { HomePage } from '../pages/home/home';
 import { LandingPage } from '../pages/landing/landing';
-import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { AngularFire } from 'angularfire2';
 
@@ -19,7 +19,7 @@ export class MyApp {
     af.auth.subscribe( user => {
       if (user) {
         console.log("User: "); console.log(user);
-        this.rootPage = HomePage;
+        this.rootPage = TabsPage;
         // this.rootPage = LandingPage;
       } else {
         this.rootPage = LandingPage;

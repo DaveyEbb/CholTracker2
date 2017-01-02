@@ -3,8 +3,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 // Importing pages
 import { LandingPage } from '../pages/landing/landing';
-import { BillDetailPage } from '../pages/bill-detail/bill-detail';
-import { CreateBillPage } from '../pages/create-bill/create-bill';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
@@ -13,6 +11,8 @@ import { BloodtestCreatePage } from '../pages/bloodtest-create/bloodtest-create'
 import { BloodtestDetailPage } from '../pages/bloodtest-detail/bloodtest-detail';
 import { BloodtestListPage } from '../pages/bloodtest-list/bloodtest-list';
 import { ChartsPage } from '../pages/charts/charts';
+import { TabsPage } from '../pages/tabs/tabs';
+import { WelcomePage } from '../pages/welcome/welcome';
 // Importing providers
 import { BloodtestData } from '../providers/bloodtest-data';
 import { AuthData } from '../providers/auth-data';
@@ -38,8 +38,6 @@ const myFirebaseAuthConfig = {
   declarations: [
     MyApp,
     LandingPage,
-    BillDetailPage,
-    CreateBillPage,
     HomePage,
     LoginPage,
     ResetPasswordPage,
@@ -47,7 +45,9 @@ const myFirebaseAuthConfig = {
     BloodtestCreatePage,
     BloodtestDetailPage,
     BloodtestListPage,
-    ChartsPage
+    ChartsPage,
+    TabsPage,
+    WelcomePage
   ],
 imports: [
     IonicModule.forRoot(MyApp),
@@ -57,8 +57,6 @@ bootstrap: [IonicApp],
 entryComponents: [
     MyApp,
     LandingPage,
-    BillDetailPage,
-    CreateBillPage,
     HomePage,
     LoginPage,
     ResetPasswordPage,
@@ -66,7 +64,9 @@ entryComponents: [
     BloodtestCreatePage,
     BloodtestDetailPage,
     BloodtestListPage,
-    ChartsPage
+    ChartsPage,
+    TabsPage,
+    WelcomePage
 ],
 providers: [
   [{provide: ErrorHandler, useClass: IonicErrorHandler}],

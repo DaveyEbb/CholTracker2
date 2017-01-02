@@ -43,8 +43,8 @@ export class ChartsPage {
               this.bloodtestArray.push(snapshot.val())
            });
          })
-        console.log("** bloodtestArray: ");console.log(this.bloodtestArray); 
-        console.log("** length of array: ");console.log(this.bloodtestArray.length);
+        //console.log("** bloodtestArray: ");console.log(this.bloodtestArray); 
+        //console.log("** length of array: ");console.log(this.bloodtestArray.length);
 
         // Strip out duplicates
         var NewArray = [];
@@ -52,7 +52,7 @@ export class ChartsPage {
         var i,j;
 
         for (i=0; i<this.bloodtestArray.length; i++) {
-	        console.log(">> i: " + i);
+	        //console.log(">> i: " + i);
 	        notYetPushed = true;
  	        for (j=0; j<NewArray.length; j++) {
 		          console.log(">>>> j: " + j);
@@ -67,16 +67,16 @@ export class ChartsPage {
 			            }    
 		            }
 	          }
-            console.log("** notYetPushed: " + notYetPushed);
+            //console.log("** notYetPushed: " + notYetPushed);
 	          if (notYetPushed == true) {
 		            NewArray.push(this.bloodtestArray[i]);
 		            console.log("Pushed: ");console.log(this.bloodtestArray[i]);
 	        }
         }
-        console.log("NewArray: ");console.log(NewArray); 
-        console.log("Length of NewArray: " + NewArray.length);
+        //console.log("NewArray: ");console.log(NewArray); 
+        //console.log("Length of NewArray: " + NewArray.length);
         this.bloodtestArray = NewArray;
-        console.log(this.bloodtestArray);
+        //console.log(this.bloodtestArray);
 
     }
 
