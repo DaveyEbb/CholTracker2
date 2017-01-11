@@ -13,10 +13,11 @@ import { BloodtestListPage } from '../pages/bloodtest-list/bloodtest-list';
 import { ChartsPage } from '../pages/charts/charts';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { ProfilePage } from '../pages/profile/profile';
 // Importing providers
 import { BloodtestData } from '../providers/bloodtest-data';
 import { AuthData } from '../providers/auth-data';
-import { BillData } from '../providers/bill-data';
+import { ProfileData } from '../providers/profile-data';
 // Import the AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -47,7 +48,8 @@ const myFirebaseAuthConfig = {
     BloodtestListPage,
     ChartsPage,
     TabsPage,
-    WelcomePage
+    WelcomePage,
+    ProfilePage
   ],
 imports: [
     IonicModule.forRoot(MyApp),
@@ -66,12 +68,13 @@ entryComponents: [
     BloodtestListPage,
     ChartsPage,
     TabsPage,
-    WelcomePage
+    WelcomePage,
+    ProfilePage
 ],
 providers: [
   [{provide: ErrorHandler, useClass: IonicErrorHandler}],
   AuthData,
-  BillData,
+  ProfileData,
   BloodtestData
   ]
 })

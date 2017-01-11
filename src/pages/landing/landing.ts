@@ -18,15 +18,15 @@ export class LandingPage {
     this.navCtrl.push(LoginPage);
   }
 
-  goToBillList(){
-    this.authData.anonymousLogin().then( user => {
-      this.navCtrl.push(HomePage);
-    });
-    let loading = this.loadingCtrl.create({
-      dismissOnPageChange: true
-    });
-    loading.present();
-  }
+  // goToBillList(){
+  //   this.authData.anonymousLogin().then( user => {
+  //     this.navCtrl.push(HomePage);
+  //   });
+  //   let loading = this.loadingCtrl.create({
+  //     dismissOnPageChange: true
+  //   });
+  //   loading.present();
+  // }
 
   goToBloodtestList(){
     this.authData.anonymousLogin().then( user => {

@@ -1,20 +1,21 @@
 
 <ion-header>
 <ion-navbar color="primary">
-<ion-title>Landing Page</ion-title>
+<ion-title>Cholesterol Tracker</ion-title>
 </ion-navbar>
 </ion-header>
 
 <ion-content padding class="landing">
 <!--<img src="assets/img/logo.jpg" class="auth-img">-->
-    <br>
-    <button ion-button block danger (click)="goToBloodtestList()">
+    <br><br>
+    <!--<button ion-button block danger (click)="goToBloodtestList()">
         Start Recording your Blood Tests
-    </button>
-    <button ion-button block clear (click)="goToLogin()">
+    </button>-->
+    <button ion-button block (click)="goToLogin()">
         Already have an account? Log in
     </button>
-    <button ion-button block dark (click)="goToSignUp()">
+    <br>
+    <button ion-button block dark (click)="goToSignup()">
         Create New Account
     </button>
 </ion-content>

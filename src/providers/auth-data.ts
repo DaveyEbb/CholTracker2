@@ -7,6 +7,8 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 @Injectable()
 export class AuthData {
   fireAuth: any;
+  public userProfile: any;
+
   constructor(public af: AngularFire) {
     af.auth.subscribe( user => {
       if (user) {
@@ -49,8 +51,16 @@ export class AuthData {
       return firebase.auth().sendPasswordResetEmail(email);
     }
 
+    signupUser(email: string, password: string): any {
+      return this.fireAuth.createUserWithEmailAndPassword(email, password)
+        .then((newUser) => {
+          this.userProfile.child(newUser.uid).set({email: email});
+        });
+    }
+
     logoutUser(): any {
-      return firebase.auth().signOut();
+      //return firebase.auth().signOut();
+        this.af.auth.logout();
     }
 
 
