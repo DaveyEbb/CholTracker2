@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
-import { HomePage } from '../home/home';
+import { ProfileCreatePage } from '../profile-create/profile-create';
 
 @Component({
   selector: 'page-signup',
@@ -13,6 +13,7 @@ export class SignupPage {
   public signupForm;
   emailChanged: boolean = false;
   passwordChanged: boolean = false;
+  birthDateChanged: boolean = false;
   submitAttempt: boolean = false;
   loading: any;
 
@@ -22,7 +23,8 @@ export class SignupPage {
 
     this.signupForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])],
+      birthDate: ['', Validators.compose([])]
     })
   }
 
@@ -46,13 +48,15 @@ export class SignupPage {
    */
   signupUser(){
     this.submitAttempt = true;
+    console.log("** signupUser()");
 
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
-      this.authData.linkAccount(this.signupForm.value.email, 
+      this.authData.signupUser(this.signupForm.value.email, 
       this.signupForm.value.password).then(() => {
-        this.nav.setRoot(HomePage);
+        //this.nav.setRoot(ProfileCreatePage);
+        this.nav.push(ProfileCreatePage);
       }, (error) => {
         this.loading.dismiss().then( () => {
           var errorMessage: string = error.message;

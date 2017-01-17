@@ -2,7 +2,8 @@ import { NavController, AlertController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { ProfileData } from '../../providers/profile-data';
 import { AuthData } from '../../providers/auth-data';
-import { LoginPage } from '../login/login';
+//import { LoginPage } from '../login/login';
+import { LandingPage } from '../landing/landing';
 
 @Component({
   selector: 'page-profile',
@@ -22,9 +23,13 @@ export class ProfilePage {
 
   }
 
+  ionViewDidLoad() {
+    console.log('Hello Profile Page');
+  }
+
   logOut(){
     this.authData.logoutUser().then(() => {
-      this.nav.setRoot(LoginPage);
+      this.nav.setRoot(LandingPage);
     });
   }
 

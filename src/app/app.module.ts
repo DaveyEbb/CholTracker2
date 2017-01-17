@@ -14,6 +14,9 @@ import { ChartsPage } from '../pages/charts/charts';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ProfilePage } from '../pages/profile/profile';
+import { TandcPage } from '../pages/tandc/tandc';
+import { ProfileCreatePage } from '../pages/profile-create/profile-create';
+import { PrivacyPolicyPage } from '../pages/privacy-policy/privacy-policy';
 // Importing providers
 import { BloodtestData } from '../providers/bloodtest-data';
 import { AuthData } from '../providers/auth-data';
@@ -49,7 +52,10 @@ const myFirebaseAuthConfig = {
     ChartsPage,
     TabsPage,
     WelcomePage,
-    ProfilePage
+    ProfilePage,
+    TandcPage,
+    ProfileCreatePage,
+    PrivacyPolicyPage
   ],
 imports: [
     IonicModule.forRoot(MyApp),
@@ -69,10 +75,13 @@ entryComponents: [
     ChartsPage,
     TabsPage,
     WelcomePage,
-    ProfilePage
+    ProfilePage,
+    TandcPage,
+    ProfileCreatePage,
+    PrivacyPolicyPage
 ],
 providers: [
-  [{provide: ErrorHandler, useClass: IonicErrorHandler}],
+  {provide: ErrorHandler, useClass: IonicErrorHandler},
   AuthData,
   ProfileData,
   BloodtestData

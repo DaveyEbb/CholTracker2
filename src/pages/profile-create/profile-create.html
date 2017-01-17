@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ProfileCreate page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ProfileCreate</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+      <ion-label class="dob-label">Date of Birth</ion-label>
+      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY"
+        [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
+    </ion-item>
+
+ 
+ 
+ <p>
+    Please review our Terms and Conditions. 
+  </p>
+
+  
+ <button ion-button block clear (click)="goToTandc()">
+    Click here to view Terms and Conditions
+  </button>
+
+  <ion-checkbox ng-model="isChecked"> </ion-checkbox>
+   Accept Terms & Conditions
+   <br><br>
+
+    The small amount of personal data captured for this app will never be
+    shared with any other party.
+
+ <button ion-button block clear (click)="goToPrivacyPolicy()">
+    Click here to view our Privacy Policy
+  </button>
+
+</ion-content>

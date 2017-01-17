@@ -5,22 +5,35 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Cholesterol Tracker!</h2>
+  <h2>Track Your Cholesterol Levels</h2>
   <p>
     This app allows you to record the results of your blood tests and track
     your progress on key numbers such as "good" and 'bad' cholesterol levels.
   </p>
   <p>
-    A charting facility is provided for you to see your progress 
+    A charting facility is provided for you to view your progress 
     graphically.
   </p>
   <p>
-    First of all please click on the button to complete your profile and review Terms 
-    and Conditions.
+    First of all please review our Terms and Conditions. 
   </p>
 
-  <button ion-button color="dark" (click)="logOut()">
-    Log out
+  
+
+ <button ion-button block clear (click)="goToTandc()">
+    Click here to view Terms & Conditions
   </button>
+
+  <ion-checkbox ng-model="isChecked"> </ion-checkbox>
+   Accept Terms & Conditions
+   <br><br>
+
+    The small amount of personal data captured for this app will never be
+    shared with any other party.
+
+ <button ion-button block clear (click)="goToPrivacyPolicy()">
+    Click here to view our Privacy Policy
+  </button>
+
 
 </ion-content>
