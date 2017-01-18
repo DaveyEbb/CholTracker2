@@ -28,14 +28,6 @@ export class WelcomePage {
     this.navCtrl.push(ProfilePage);
   }
 
-  goToTandc() {
-    this.navCtrl.push(TandcPage);
-  }
-
-  goToPrivacyPolicy() {
-    this.navCtrl.push(PrivacyPolicyPage);
-  }
-
   logOut(){
     this.authData.logoutUser();
     //this.authData.logoutUser().then(() => {

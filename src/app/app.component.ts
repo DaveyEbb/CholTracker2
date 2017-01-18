@@ -19,7 +19,7 @@ export class MyApp {
   constructor(platform: Platform, public af: AngularFire) {
     af.auth.subscribe( user => {
       if (user) {
-        console.log("User: "); console.log(user);
+        console.log("User: (app.component.ts)"); console.log(user);
         this.rootPage = TabsPage;
         // this.rootPage = LandingPage;
       } else {
