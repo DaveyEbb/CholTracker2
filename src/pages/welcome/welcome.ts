@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 //import { NavController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 // import { LoginPage } from '../login/login';
-import { TandcPage } from '../tandc/tandc';
-import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
+// import { TandcPage } from '../tandc/tandc';
+// import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy';
 import { AuthData } from '../../providers/auth-data';
 
 @Component({

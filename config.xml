@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.choltracker2721358" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>cholTracker2</name>
-  <description>An awesome Ionic/Cordova app.</description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+  <name>Cholesterol Tracker</name>
+  <description>An app to track blood cholesterol levels.</description>
+  <author email="hi@ionicframework" href="http://mobilehealthuk.com/">Mobile Health UK</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>

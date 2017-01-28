@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+// import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import firebase from 'firebase'; 
 // advised by Jorge that AngularFire beta6 already has Firebase.
 // Firebase is imported in the "node_modules/angularfire2/interfaces.d.ts/" file

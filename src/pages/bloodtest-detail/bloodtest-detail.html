@@ -16,28 +16,28 @@
     </ion-item>
 
     <ion-item>
-      <ion-icon color="" name="information-circle" item-left></ion-icon>
-      Date: {{bloodtest?.testDate}}
+      <ion-icon color="secondary" name="calendar" item-left></ion-icon>
+      Date: {{bloodtest?.testDate | date: 'dd MMM yyyy'}}
     </ion-item>
 
     <ion-item>
-      <ion-icon color="secondary" name="information-circle" item-left></ion-icon>
-      HDL: {{bloodtest?.hdl}}
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      HDL: {{bloodtest?.hdl}} mmol/L
     </ion-item>
 
     <ion-item>
-      <ion-icon color="secondary" name="information-circle" item-left></ion-icon>
-      LDL: {{bloodtest?.ldl}}
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      LDL: {{bloodtest?.ldl}} mmol/L
     </ion-item>
 
     <ion-item>
-      <ion-icon color="secondary" name="information-circle" item-left></ion-icon>
-      Triglycerides: {{bloodtest?.trigl}}
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      Triglycerides: {{bloodtest?.trigl}} mmol/L
     </ion-item>
 
     <ion-item>
-      <ion-icon color="secondary" name="information-circle" item-left></ion-icon>
-      Total Cholesterol: {{bloodtest?.totchol}}
+      <ion-icon color="danger" name="heart-outline" item-left></ion-icon>
+      Total Cholesterol: {{bloodtest?.totchol}} mmol/L
     </ion-item>
     
 

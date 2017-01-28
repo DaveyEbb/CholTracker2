@@ -21,7 +21,7 @@
     (click)="moreBloodtestOptions(bloodtest.$key)">
     <ion-icon name="flask" color="danger" item-left></ion-icon>
     <h2>{{bloodtest.bloodtestDesc}}</h2>
-    <p>Date: <strong>{{bloodtest.testDate}}</strong></p>
+    <p>Date: <strong>{{bloodtest.testDate | date: 'dd MMM yyyy'}}</strong></p>
   </ion-item>
 </ion-list>
 

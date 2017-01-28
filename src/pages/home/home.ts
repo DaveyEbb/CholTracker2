@@ -32,7 +32,7 @@ export class HomePage {
 
   moreBloodtestOptions(bloodtestId){
     let action = this.actionCtrl.create({
-      title: 'Modify bloodtest results',
+      //title: 'Modify bloodtest results',
       buttons: [
     // We'll add the buttons here
         {
@@ -44,7 +44,7 @@ export class HomePage {
           }
         },
         {
-          text: 'More details',
+          text: 'Show details',
           icon: !this.platform.is('ios') ? 'play' : null,
           handler: () => {
             this.navCtrl.push(BloodtestDetailPage, {
